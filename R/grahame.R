@@ -15,4 +15,6 @@ a$identifier
 b <- client$search("Patient", "gender=male", summaryType="count")
 b$total
 
-
+# now, graphql on a resource
+c <- client$readGQL(location = "Patient/example", graphQL = "{id name{given,family}}")
+print(c)
